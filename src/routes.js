@@ -20,7 +20,14 @@ module.exports = function (stockRepository) {
                 getCount(req.params.isbn).
                 then(function (result) {
                     if (result) {
-                        res.json({count: result});
+                        res.format({
+                            'text/html': function () {
+                                res.send('<div>Copies left: ' + result + '</div>');
+                            },
+                            'default': function () {
+                                res.send({count: result});
+                            }
+                        });
                     } else {
                         res.status(404).send('No book with isbn ' + req.params.isbn);
                     }
@@ -28,7 +35,7 @@ module.exports = function (stockRepository) {
                 catch(next);
         },
         hello: function (req, res) {
-            res.send('Hello Pipelines!!');
+            res.send('Hello Pipeline!');
         }
     };
 };
