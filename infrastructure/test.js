@@ -7,7 +7,8 @@ var test = { name: 'book-inventory-test-arkenia',
   maintenance: false,
   stack: 'cedar-14',
   config_vars: { 
-      MONGODB_URI: process.env.MONGODB_URI,
+      MONGODB_URI: process.env.MONGODB_URI
+  },
   collaborators: [ 'untoldex@gmail.com', 'arkenia.mierzwa@gmail.com' ],
   features:
    { 'runtime-dyno-metadata': { enabled: false },
