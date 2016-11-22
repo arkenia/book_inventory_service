@@ -7,7 +7,7 @@ var prod = { name: 'book-inventory-service-arkenia',
   maintenance: false,
   stack: 'cedar-14',
   config_vars: { 
-      MONGODB_URI: 'mongodb://heroku_jbj2b46s:voikrvavqqpmo7sj86199mbull@ds159387.mlab.com:59387/heroku_jbj2b46s',
+      MONGODB_URI: process.env.MONGODB_URI,
       NODE_ENV: 'production'
      },
   addons: {},
