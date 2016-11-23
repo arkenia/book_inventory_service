@@ -7,6 +7,7 @@ module.exports = function(stockRepository) {
     var middleware = require('./middleware');
 
     app.use(bodyParser.json());
+    app.use(auth);
 
     app.get('/', routes.hello);
 
