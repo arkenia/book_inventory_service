@@ -23,7 +23,7 @@ var prod = { name: 'book-inventory-service-arkenia',
      'http-end-to-end-continue': { enabled: false },
      'app-alerting': { enabled: false } },
   formation: [ { process: 'web', quantity: 1, size: 'Free' } ],
-  log_drains: [],
+  log_drains: ['syslog://data.logentries.com:10727'],
   domains: [ 'book-inventory-service-arkenia.herokuapp.com' ] };
 
 
